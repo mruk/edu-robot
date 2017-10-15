@@ -1,0 +1,7 @@
+Experiment values.
+Height count: 10 x 1.5[m]
+Time measurements: 3
+   { 3.34[s] 4.83[s] 5.03[s] }
+
+Model values.
+Gravity: 15,50 [m/s]
