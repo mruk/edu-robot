@@ -9,11 +9,9 @@
 public class Model {
 
 	private double gravity;
-	private double meanTime;
 
 	Model() {
 		gravity = 0;
-
 	}
 
 	public void setGravity(double val) {
@@ -22,16 +20,6 @@ public class Model {
 
 	public double getGravity() {
 		return gravity;
-	}
-
-
-
-	public void setMeanTime(double time) {
-		if (time>0) meanTime = time;
-	}
-
-	public double getMeanTime() {
-		return meanTime;
 	}
 
 	@Override
