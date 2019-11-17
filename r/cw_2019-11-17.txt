@@ -1,0 +1,68 @@
+Z1.
+_norm
+N(70,6)
+
+(a) P(x ≤ 60)
+    > pnorm(60, mean=70, sd=6)
+    [1] 0.04779035
+
+(b) P(70 ≤ x ≤ 75)
+  TAK NIE:
+  > sum(dnorm(70:75, mean=70, sd=6))
+  [1] 0.3538651
+
+  TAK:
+  pnorm(75, mean=70, sd=6) - pnorm(70, mean=70, sd=6)
+  [1] 0.2976716
+
+
+(c) P(x ≥ 85)
+  > 1-sum(pnorm(85, mean=70, sd=6))
+  [1] 0.006209665
+
+  > pnorm(85, mean=70, sd=6, lower.tail=FALSE)
+  [1] 0.006209665
+
+Z2.
+To samo co powyższe ale za pomocą zmiennej ustandaryzowanej N(0,1)
+
+(a)
+  > pnorm((60-70)/6, mean=(70-70), sd=(6/6))
+  [1] 0.04779035
+
+(b)
+  > pnorm((75-70)/6, mean=(70-70), sd=(6/6)) - pnorm((70-70), mean=(70-70), sd=(6/6))
+  [1] 0.2976716
+
+(c)
+  > pnorm((85-70)/6, mean=70-70, sd=6/6, lower.tail=FALSE)
+  [1] 0.006209665
+
+
+Z4.
+Wylicz uα dla 1-α = 0.9; 0.95; 0.99; 0.999
+  > abs(qnorm(0.1/2)); abs(qnorm(0.05/2)); abs(qnorm(0.01/1)); abs(qnorm(0.001/2))
+  [1] 1.644854
+  [1] 1.959964
+  [1] 2.326348
+  [1] 3.290527
+
+
+Z5. Narysuj rozkład normalny std. w przedziale [-5,5]
+Korzystając z funkcji 'lines' do wykresu dodaj wykres rozkładu t-Studenta
+o liczbie st.swobody 1,2,5,10,30.
+
+> x = seq(from = -5, to = 5, by = 0.1)
+> ydt1 = dt(x, df=1)
+> lines(x, ydt1)
+
+
+P.8.2. Jaja kurze o wadze N(50,3) pakowane po 9 sztuk.
+Jakie jest P że średnia waga jaja będzie > 52g.
+
+> pnorm(52, mean=50, sd=3/sqrt(9), lower.tail = FALSE)
+[1] 0.02275013
+
+I dodatkowo, policz jakie jest P że średnia waga jaja jest w przedziale (49.9 ≤ x ≤ 50.1)
+  > pnorm(50.1, mean=50, sd=3/sqrt(9)) - pnorm(49.9, mean=50, sd=3/sqrt(9))
+  [1] 0.07965567
